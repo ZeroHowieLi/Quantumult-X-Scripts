@@ -1,7 +1,7 @@
 // ^https:\/\/(app|data)\.(bilibili|biliapi)\.(com|net)\/x
 
 // 推荐视频
-const feed_path = "/x/resource/show/tab/v2?access_key"
+const feed_path = "/x/v2/feed/index?access_key"
 // Tab资源按钮
 const tab_path = "/x/resource/show/tab/v2?access_key"
 

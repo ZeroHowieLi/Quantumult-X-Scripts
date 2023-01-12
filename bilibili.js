@@ -18,7 +18,7 @@ if (url.indexOf(feed_path) != -1) {
         }
     }
 } else if (url.indexOf(tab_path) != -1) {
-    // Tab 只保留搜索+我的
+    // Tab 只保留搜索+我的+消息
     data = {
         "code" : 0,
         "config" : {
@@ -49,16 +49,7 @@ if (url.indexOf(feed_path) != -1) {
               "pos" : 2
             }
           ],
-          "top_left" : {
-            "story_foreground_image" : "http://i0.hdslb.com/bfs/app/98098cfd9349b7500c233216169d768cd536d305.png",
-            "story_background_image" : "http://i0.hdslb.com/bfs/app/7391267ec11cfe99823a8cfd80532a7bc6eca390.png",
-            "goto" : 2,
-            "listen_foreground_image" : "http://i0.hdslb.com/bfs/app/986ee5e963237d511802c4084c83c2f228e97369.png",
-            "exp" : 1,
-            "head_tag" : "https://i0.hdslb.com/bfs/app/92e7b36c3bd10c850e8a2ba85d19566937751540.png",
-            "listen_background_image" : "http://i0.hdslb.com/bfs/app/365848675f453e32b42567ba9e249a347a5df061.png",
-            "url" : "bilibili://videoshortcut?user_reg_state=0"
-          },
+          "top_left" : {},
           "bottom" : [
             {
               "uri" : "bilibili://user_center/",
@@ -67,7 +58,7 @@ if (url.indexOf(feed_path) != -1) {
               "id" : 181,
               "icon_selected" : "http://i0.hdslb.com/bfs/archive/a54a8009116cb896e64ef14dcf50e5cade401e00.png",
               "icon" : "http://i0.hdslb.com/bfs/archive/4b0b2c49ffeb4f0c2e6a4cceebeef0aab1c53fe1.png",
-              "name" : "我的"
+              "name" : "2024冲冲冲"
             }
           ]
         },

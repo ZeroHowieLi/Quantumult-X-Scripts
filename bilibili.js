@@ -34,7 +34,7 @@ if (url.indexOf(feed_path) != -1) {
               "id" : 39,
               "tab_id" : "直播tab",
               "name" : "好好",
-              "uri" : "bilibili://live/home",
+              "uri" : "bilibili://user_center/favourite",
               "pos" : 1
             },
             {
@@ -42,28 +42,28 @@ if (url.indexOf(feed_path) != -1) {
               "tab_id" : "推荐tab",
               "default_selected" : 1,
               "name" : "学习",
-              "uri" : "bilibili://pegasus/promo",
+              "uri" : "bilibili://user_center/favourite",
               "pos" : 2
             },
             {
               "id" : 41,
               "tab_id" : "hottopic",
               "name" : "24",
-              "uri" : "bilibili://pegasus/hottopic",
+              "uri" : "bilibili://user_center/favourite",
               "pos" : 3
             },
             {
               "id" : 545,
               "tab_id" : "bangumi",
               "name" : "24",
-              "uri" : "bilibili://pgc/home",
+              "uri" : "bilibili://user_center/favourite",
               "pos" : 4
             },
             {
               "id" : 151,
               "tab_id" : "film",
               "name" : "成功",
-              "uri" : "bilibili://pgc/cinema-tab",
+              "uri" : "bilibili://user_center/favourite",
               "pos" : 5
             },
             {
@@ -71,7 +71,7 @@ if (url.indexOf(feed_path) != -1) {
               "id" : 136117,
               "tab_id" : "165",
               "name" : "上岸",
-              "uri" : "bilibili://following/home_activity_tab/136117",
+              "uri" : "bilibili://user_center/favourite",
               "color" : "#DD1225"
             }
           ],

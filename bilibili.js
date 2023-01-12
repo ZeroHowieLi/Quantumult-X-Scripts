@@ -1,7 +1,6 @@
 // ^https:\/\/(app|data)\.(bilibili|biliapi)\.(com|net)\/x\/v2
 // ^https://(app|data).(bilibili|biliapi).(com|net)/
 // ^https:\/\/(app|data)\.bili*\.*\/
-https://*.(bilibili\.com|biliapi\.net)
 
 const feed_path = "/x/v2/feed/index?access_key"
 

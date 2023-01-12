@@ -7,9 +7,10 @@ const feed_path = "/x/v2/feed/index?access_key"
 
 let url = $request.url
 console.log(url)
-let body = JSON.parse($response.body);
+let body = $response.body;
+let data
 if (url.indexOf(feed_path) != -1) {
-    body = {
+    data = {
         "code": 0,
         "message": "0",
         "ttl": 1,
@@ -18,8 +19,10 @@ if (url.indexOf(feed_path) != -1) {
         }
     }
 }
-console.log(body)
+if (typeof data !== 'undefined') {
+    body = JSON.stringify(data)
+}
 
 $done({
-    body: JSON.stringify(body)
+    body: body
 })

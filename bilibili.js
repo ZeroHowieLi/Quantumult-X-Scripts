@@ -32,13 +32,6 @@ if (url.indexOf(feed_path) != -1) {
           "tab" : [],
           "top_more" : [
             {
-              "id" : 621,
-              "icon" : "http://i0.hdslb.com/bfs/feed-admin/f95dfa31c793c857af6e7b65b5387a05f30d31ba.png",
-              "name" : "更多分区",
-              "uri" : "bilibili://main/top_category",
-              "pos" : 1
-            },
-            {
               "id" : 922,
               "icon" : "http://i0.hdslb.com/bfs/feed-admin/38beac42189ad4d838d20259a5b2cdfd302fef40.png",
               "name" : "搜索",
@@ -46,6 +39,7 @@ if (url.indexOf(feed_path) != -1) {
               "pos" : 2
             }
           ],
+          "top_left" : {},
           "bottom" : [
             {
               "uri" : "bilibili://user_center/",
@@ -59,7 +53,7 @@ if (url.indexOf(feed_path) != -1) {
           ]
         },
         "message" : "0"
-      }
+    }
 }
 
 if (typeof data !== 'undefined') {

@@ -43,7 +43,7 @@ if (url.indexOf(feed_path) != -1) {
     })
     // 底部只保留我的
     body.data.bottom = body.data.bottom.filter(function(item) {
-        return item.uri === 'bilibili://user_center/'
+        return item.uri === 'bilibili://user_center/' || item.uri === 'bilibili://main/home/'
     })
 } else if (url.indexOf(resource_top_path) != -1) {
     console.log("resource top...")

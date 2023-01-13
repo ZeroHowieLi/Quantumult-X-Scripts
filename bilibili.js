@@ -37,9 +37,8 @@ if (url.indexOf(feed_path) != -1) {
     })
     // 底部只保留我的
     body.data.bottom = body.data.bottom.filter(function(item) {
-        return item.pos === 5
+        return item.uri === 'bilibili://user_center/'
     })
-    body.data.bottom[0] = "干就完了"
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')
     // 删除热搜榜单
@@ -49,6 +48,7 @@ if (url.indexOf(feed_path) != -1) {
 
 let res = $response.body
 if (typeof body !== 'undefined') {
+    console.log(body)
     res = JSON.stringify(body)
 }
 $done({

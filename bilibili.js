@@ -22,13 +22,12 @@ if (url.indexOf(feed_path) != -1) {
 } else if (url.indexOf(resource_path) != -1) {
     console.log('resource...')
     let tab = body.data.tab
-    // Tab的链接全部换为收藏
+    // Tab好像随便改点什么东西，就会全部都隐藏
     for (let i = 0; i < tab.length; i++) {
-        tab[i].name = new Date().getMinutes().toString()
         tab[i].uri = 'bilibili://user_center/favourite'
     }
     body.data.tab = tab
-    // body.data.top = []
+    body.data.top = []
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')
     // 删除热搜榜单

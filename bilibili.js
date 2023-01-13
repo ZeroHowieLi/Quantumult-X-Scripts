@@ -68,7 +68,6 @@ if (url.indexOf(feed_path) !== -1) {
 let res = $response.body
 if (typeof body !== 'undefined') {
     res = JSON.stringify(body)
-    console.log(res)
 }
 $done({
     body: res

@@ -22,10 +22,10 @@ if (url.indexOf(feed_path) != -1) {
 } else if (url.indexOf(resource_path) != -1) {
     console.log('resource...')
     body.data.tab = []
-    body.data.top = []
+    // body.data.top = []
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')
-    body.data[0].title = '热搜已被屏蔽'
+    // 删除热搜榜单
     body.data[0].data = {}
     body.data[0].search_ranking_meta.open_search_ranking = false
 }

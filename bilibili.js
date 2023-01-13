@@ -46,6 +46,9 @@ if (url.indexOf(feed_path) !== -1) {
     body.data.bottom = body.data.bottom.filter(function(item) {
         return item.uri === 'bilibili://user_center/' || item.uri === 'bilibili://main/home/'
     })
+    for (let i = 0; i < body.data.bottom.length; i++) {
+        body.data.bottom[i].name = "Bili"
+    }
 } else if (url.indexOf(resource_top_path) !== -1) {
     console.log("resource top...")
     body.data.items = {}
@@ -65,7 +68,7 @@ if (url.indexOf(feed_path) !== -1) {
 let res = $response.body
 if (typeof body !== 'undefined') {
     res = JSON.stringify(body)
-    console.log(body)
+    console.log(res)
 }
 $done({
     body: res

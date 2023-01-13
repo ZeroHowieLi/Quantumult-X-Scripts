@@ -4,11 +4,12 @@
 const feed_path = "/x/v2/feed/index"
 // 热搜
 const hot_path = "/x/v2/search/square"
+// 资源: Tab、bottom等
 const resource_path = "/x/resource/show/tab/v2"
+// 搜索框右边的活动
 const resource_top_path = "/x/resource/top/activity"
-
 // 开屏广告
-const splash_path = "/x/v2/splash/show"
+const splash_path = "/x/v2/splash/list"
 
 let url = $request.url
 let body
@@ -33,21 +34,32 @@ if (url.indexOf(feed_path) != -1) {
         tab[i].uri = 'bilibili://user_center/favourite'
     }
     body.data.tab = tab
-    // 只保留消息
+    // 保留消息
     body.data.top = body.data.top.filter(function(item) {
         return item.uri === 'bilibili://link/im_home'
     })
-    // 只保留搜索
+    // 保留搜索
     body.data.top_more = body.data.top_more.filter(function(item) {
         return item.pos === 'bilibili://search'
     })
-    // 底部只保留我的
+    // 底部只保留首页+我的
     body.data.bottom = body.data.bottom.filter(function(item) {
         return item.uri === 'bilibili://user_center/' || item.uri === 'bilibili://main/home/'
     })
 } else if (url.indexOf(resource_top_path) != -1) {
     console.log("resource top...")
     body.data.items = {}
+} else if (url.indexOf(splash_path)) {
+    // https://github.com/blackmatrix7/ios_rule_script/blob/master/script/bilibili/bilibili_plus.js
+    console.log("splash list...")
+    body.data.max_time = 0
+    body.data.min_interval = 31536000
+    body.data.pull_interval = 31536000
+    for (let i = 0; i < body.data.list.length; i++) {
+        body.data.list[i].duration = 0
+        body.data.list[i].begin_time = 1915027200
+        body.data.list[i].end_time = 1924272000
+    }
 }
 
 let res = $response.body

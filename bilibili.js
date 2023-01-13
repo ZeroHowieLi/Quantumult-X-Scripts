@@ -1,9 +1,9 @@
 // ^https:\/\/(app|data)\.(bilibili|biliapi)\.(com|net)\/x
 
 // 推荐视频
-const feed_path = "/x/v2/feed/index?access_key"
+const feed_path = "/x/v2/feed/index"
 // Tab资源按钮
-const tab_path = "/x/resource/show/tab/v2?access_key"
+const resource_path = "/x/resource/show/tab/v2"
 // 开屏广告
 const splash_path = "/x/v2/splash/show"
 
@@ -15,10 +15,12 @@ try {
     console.log(url, err)
 }
 if (url.indexOf(feed_path) != -1) {
+    console.log('feed...')
     body.data.items = []
-} else if (url.indexOf(tab_path) != -1) {
-    // Tab 只保留搜索+我的+消息
+} else if (url.indexOf(resource_path) != -1) {
+    console.log('resource...')
     body.data.tab = []
+    body.data.top = []
 }
 
 let res = $response.body

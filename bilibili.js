@@ -31,6 +31,7 @@ if (url.indexOf(feed_path) != -1) {
     for (let i = 0; i < top.length; i++) {
         top[i].uri = 'bilibili://user_center/favourite'
     }
+    body.data.top = top
     // 删除更多分区
     body.data.top_more = body.data.top_more.filter(function(item) {
         return item.pos !== 1

@@ -21,7 +21,13 @@ if (url.indexOf(feed_path) != -1) {
     body.data.items = []
 } else if (url.indexOf(resource_path) != -1) {
     console.log('resource...')
-    body.data.tab = []
+    let tab = body.data.tab
+    // Tab的链接全部换为收藏
+    for (let i = 0; i < tab.length; i++) {
+        tab[i].name = new Date().getMinutes().toString()
+        tab[i].uri = 'bilibili://user_center/favourite'
+    }
+    body.data.tab = tab
     // body.data.top = []
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')

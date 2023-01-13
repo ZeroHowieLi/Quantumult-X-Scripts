@@ -25,9 +25,8 @@ if (url.indexOf(feed_path) != -1) {
     body.data.top = []
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')
-    // body.data[0].title = '热搜已被屏蔽'
-    // body.data[0].data = {}
-    // body.data[0].search_ranking_meta = {}
+    body.data[0].title = '热搜已被屏蔽'
+    body.data[0].data = {}
     body.data[0].search_ranking_meta.open_search_ranking = false
 }
 

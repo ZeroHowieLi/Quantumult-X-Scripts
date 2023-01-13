@@ -27,7 +27,14 @@ if (url.indexOf(feed_path) != -1) {
         tab[i].uri = 'bilibili://user_center/favourite'
     }
     body.data.tab = tab
-    body.data.top = []
+    let top = body.data.top
+    for (let i = 0; i < top.length; i++) {
+        top[i].uri = 'bilibili://user_center/favourite'
+    }
+    // 删除更多分区
+    body.data.top_more = body.data.top_more.filter(function(item) {
+        return item.pos !== 1
+    })
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')
     // 删除热搜榜单

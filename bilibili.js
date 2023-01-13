@@ -18,15 +18,15 @@ try {
 } catch(err) {
     console.log(url, err)
 }
-if (url.indexOf(feed_path) != -1) {
+if (url.indexOf(feed_path) !== -1) {
     console.log('feed...')
     body.data.items = []
-} else if (url.indexOf(hot_path) != -1) {
+} else if (url.indexOf(hot_path) !== -1) {
     console.log('hot...')
     // 删除热搜榜单
     body.data[0].data = {}
     body.data[0].search_ranking_meta.open_search_ranking = false
-} else if (url.indexOf(resource_path) != -1) {
+} else if (url.indexOf(resource_path) !== -1) {
     console.log('resource...')
     let tab = body.data.tab
     // Tab好像随便改点什么东西，就会全部都隐藏
@@ -46,10 +46,10 @@ if (url.indexOf(feed_path) != -1) {
     body.data.bottom = body.data.bottom.filter(function(item) {
         return item.uri === 'bilibili://user_center/' || item.uri === 'bilibili://main/home/'
     })
-} else if (url.indexOf(resource_top_path) != -1) {
+} else if (url.indexOf(resource_top_path) !== -1) {
     console.log("resource top...")
     body.data.items = {}
-} else if (url.indexOf(splash_path)) {
+} else if (url.indexOf(splash_path) !== -1) {
     // https://github.com/blackmatrix7/ios_rule_script/blob/master/script/bilibili/bilibili_plus.js
     console.log("splash list...")
     body.data.max_time = 0

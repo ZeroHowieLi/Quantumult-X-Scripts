@@ -4,71 +4,27 @@
 const feed_path = "/x/v2/feed/index?access_key"
 // Tab资源按钮
 const tab_path = "/x/resource/show/tab/v2?access_key"
+// 开屏广告
+const splash_path = "/x/v2/splash/show"
 
 let url = $request.url
-let body = $response.body;
-let data
+let body
+try {
+    body = JSON.parse($response.body)
+} catch(err) {
+    console.log(url, err)
+}
 if (url.indexOf(feed_path) != -1) {
-    data = {
-        "code": 0,
-        "message": "0",
-        "ttl": 1,
-        "data": {
-          "items": []
-        }
-    }
+    body.data.items = []
 } else if (url.indexOf(tab_path) != -1) {
     // Tab 只保留搜索+我的+消息
-    data = {
-        "code" : 0,
-        "config" : {
-          "no_login_avatar_type" : 0,
-          "popup_style" : 1,
-          "tab_simplify" : false,
-          "no_login_avatar" : "https://i0.hdslb.com/bfs/archive/689ed56f5b8b9bd26a90b20c52d464ebc0156185.png",
-          "search_entrance" : 5
-        },
-        "data" : {
-          "tab" : [],
-          "top" : [
-            {
-              "id" : 176,
-              "icon" : "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
-              "tab_id" : "消息Top",
-              "name" : "消息",
-              "uri" : "bilibili://link/im_home",
-              "pos" : 2
-            }
-          ],
-          "top_more" : [
-            {
-              "id" : 922,
-              "icon" : "http://i0.hdslb.com/bfs/feed-admin/38beac42189ad4d838d20259a5b2cdfd302fef40.png",
-              "name" : "搜索",
-              "uri" : "bilibili://search",
-              "pos" : 2
-            }
-          ],
-          "top_left" : {},
-          "bottom" : [
-            {
-              "uri" : "bilibili://user_center/",
-              "tab_id" : "我的Bottom",
-              "pos" : 5,
-              "id" : 181,
-              "icon_selected" : "http://i0.hdslb.com/bfs/archive/a54a8009116cb896e64ef14dcf50e5cade401e00.png",
-              "icon" : "http://i0.hdslb.com/bfs/archive/4b0b2c49ffeb4f0c2e6a4cceebeef0aab1c53fe1.png",
-              "name" : "2024冲冲冲"
-            }
-          ]
-        },
-        "message" : "0"
-      }
+    body.data.tab = []
 }
 
-if (typeof data !== 'undefined') {
-    body = JSON.stringify(data)
+let res = $response.body
+if (typeof body !== 'undefined') {
+    res = JSON.stringify(body)
 }
 $done({
-    body: body
+    body: res
 })

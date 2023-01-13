@@ -27,13 +27,13 @@ if (url.indexOf(feed_path) != -1) {
         tab[i].uri = 'bilibili://user_center/favourite'
     }
     body.data.tab = tab
-    // 删除游戏中心
+    // 只保留消息
     body.data.top = body.data.top.filter(function(item) {
-        return item.pos !== 1
+        return item.uri === 'bilibili://link/im_home'
     })
-    // 删除更多分区
+    // 只保留搜索
     body.data.top_more = body.data.top_more.filter(function(item) {
-        return item.pos !== 1
+        return item.pos === 'bilibili://search'
     })
     // 底部只保留我的
     body.data.bottom = body.data.bottom.filter(function(item) {

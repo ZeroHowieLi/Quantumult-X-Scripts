@@ -27,15 +27,19 @@ if (url.indexOf(feed_path) != -1) {
         tab[i].uri = 'bilibili://user_center/favourite'
     }
     body.data.tab = tab
-    let top = body.data.top
-    for (let i = 0; i < top.length; i++) {
-        top[i].uri = 'bilibili://user_center/favourite'
-    }
-    body.data.top = top
+    // 删除游戏中心
+    body.data.top = body.data.top.filter(function(item) {
+        return item.pos !== 1
+    })
     // 删除更多分区
     body.data.top_more = body.data.top_more.filter(function(item) {
         return item.pos !== 1
     })
+    // 底部只保留我的
+    body.data.bottom = body.data.bottom.filter(function(item) {
+        return item.pos === 5
+    })
+    body.data.bottom[0] = "干就完了"
 } else if (url.indexOf(hot_path) != -1) {
     console.log('hot...')
     // 删除热搜榜单

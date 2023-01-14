@@ -52,7 +52,8 @@ if (url.indexOf(feed_path) !== -1) {
     }
 } else if (url.indexOf(resource_top_path) !== -1) {
     console.log("resource top...")
-    body.data.online = {}
+    body.data.online.uri = '-'
+    body.data.online.icon = '-'
 } else if (url.indexOf(splash_path) !== -1) {
     // https://github.com/blackmatrix7/ios_rule_script/blob/master/script/bilibili/bilibili_plus.js
     console.log("splash list...")

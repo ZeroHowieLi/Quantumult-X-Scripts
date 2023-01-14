@@ -20,6 +20,7 @@ try {
 }
 if (url.indexOf(feed_path) !== -1) {
     console.log('feed...')
+    // 删除推荐流，但好像把tab隐藏后，这个链接就不会访问到了
     body.data.items = []
 } else if (url.indexOf(hot_path) !== -1) {
     console.log('hot...')

@@ -13,13 +13,13 @@
 
 `重写规则`中配置:
 
-![](src/Quantumult-X_Bilibili-Rewrite-UI.jpeg)
+<img src="src/Quantumult-X_Bilibili-Rewrite-UI.jpeg" style="zoom:50%;" />
 
 
 
 `Mitm -> 主机名`中配置(此处配置好证书，才会生效):
 
-![](src/Quantumult-X_Bilibili-Mitm-UI.jpeg)
+<img src="src/Quantumult-X_Bilibili-Mitm-UI.jpeg" style="zoom:50%;" />
 
 ## 配置文件配置
 
@@ -41,4 +41,4 @@ hostname = *.biliapi.net, *.bilibili.com
 
 # 最终效果
 
-![](src/Quantumult-X_Bilibili-Ban.JPG)
+<img src="src/Quantumult-X_Bilibili-Ban.JPG" style="zoom:50%;" />

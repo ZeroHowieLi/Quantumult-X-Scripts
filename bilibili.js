@@ -52,7 +52,7 @@ if (url.indexOf(feed_path) !== -1) {
     }
 } else if (url.indexOf(resource_top_path) !== -1) {
     console.log("resource top...")
-    body.data.ttl = 0
+    body.ttl = 0
     body.data.online.uri = '-'
     body.data.online.icon = '-'
 } else if (url.indexOf(splash_path) !== -1) {

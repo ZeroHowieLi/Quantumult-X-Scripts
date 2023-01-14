@@ -55,6 +55,7 @@ if (url.indexOf(feed_path) !== -1) {
     body.ttl = 0
     body.data.online.uri = '-'
     body.data.online.icon = '-'
+    body.data.online.animate = {}
 } else if (url.indexOf(splash_path) !== -1) {
     // https://github.com/blackmatrix7/ios_rule_script/blob/master/script/bilibili/bilibili_plus.js
     console.log("splash list...")
